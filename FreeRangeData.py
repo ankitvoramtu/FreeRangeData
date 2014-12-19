@@ -23,14 +23,17 @@ def signal_handler(signal,frame):
 	else:
 		sys.exit(0)
 
+def fetch_credentials():
+	cred = {}
+	with open('oauth_credentials.txt') as f:
+		cred = json.load(f)
+	return cred
+
 #Sets up oath for the application
 def authenticate():
-	client_key = 'R0BSisK1u3QdFHQPaaVwAA'
-	client_secret = 'eWVeND8NiF9wUxtTTBjImg'
-	token_key = 'DQVpdivHmYBH4jJq2N7mTQtYUfUniVfeTih59nT7OYYwDQVpdivHmYBH4jJq2N7mTQ'
-	token_secret = 'dci6FQbteMMOogB5CpJjAw'
-	oauth = OAuth1(client_key=client_key, client_secret=client_secret,
-               resource_owner_key=token_key, resource_owner_secret=token_secret,
+	cred = fetch_credentials()
+	oauth = OAuth1(client_key=cred['client_key'], client_secret=cred['client_secret'],
+               resource_owner_key=cred['token_key'], resource_owner_secret=cred['token_secret'],
                 signature_type = 'auth_header')
 	return oauth
 
@@ -156,7 +159,6 @@ def update_json(response):
 def create_article(title, description,defined_type):
 	client = requests.session()
 	url ="http://api.figshare.com/v1/my_data/articles"
-	oauth = authenticate()
 	body = {'title': title, 'description': description,'defined_type': defined_type}
 	headers = {'content-type':'application/json'}
 	response = client.post(url,auth=oauth,data=json.dumps(body),headers=headers)
@@ -175,7 +177,6 @@ def create_article(title, description,defined_type):
 def add_file(file_path):
 	client = requests.session()
 	file_name = os.path.basename(file_path)
-	oauth = authenticate()
 	url = "http://api.figshare.com/v1/my_data/articles/{}/files".format(package_json['article_id'])
 	files = {'filedata':(file_name, open( file_path , 'rb'))}
 	response = client.put(url, auth=oauth,files=files)
@@ -192,7 +193,6 @@ def add_file(file_path):
 
 def addCategory(categoryInt):
 	client = requests.session()
-	oauth=authenticate()
 	body = {'category_id':categoryInt}
 	headers = {'content-type':'application/json'}
 	url = 'http://api.figshare.com/v1/my_data/articles/{}/categories'.format(package_json['article_id'])
@@ -212,7 +212,6 @@ def addCategory(categoryInt):
 
 def addTag(tag):
 	client = requests.session()
-	oauth=authenticate()
 	body = {'tag_name':tag}
 	headers = {'content-type':'application/json'}
 	url = 'http://api.figshare.com/v1/my_data/articles/{}/tags'.format(package_json['article_id'])
@@ -250,7 +249,6 @@ def add_Author(authID):
 def publish():
 	client = requests.session()
 	url = 'http://api.figshare.com/v1/my_data/articles/{}/action/make_public'.format(package_json['article_id'])
-	oauth=authenticate()
 	response = client.post(url,auth=oath)
 
 		#check our return codes
