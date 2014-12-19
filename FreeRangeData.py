@@ -364,7 +364,6 @@ else:
 	sys.exit(133)
 	
 
-
-
+#need publish tag and description flow control. (need to add in tests and overwrites as well)
 #get current JSON record from figshare and save to disk
 fetch_article_info()
