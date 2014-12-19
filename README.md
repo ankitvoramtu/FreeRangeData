@@ -14,3 +14,8 @@ A script for uploading and updating FigShare articles.
 
 #Running FreeRangeData
 Finalize and copy Documentation tonight
+
+
+#Notes
+
+This program is still in early development it was written primarily for my use making some pretty big assumptions about how people organize their data. It is also my first serious foray into Python,so while I would love feedback/criticisms please keep it constructive as possible. 
