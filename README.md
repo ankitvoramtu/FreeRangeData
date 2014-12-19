@@ -3,7 +3,7 @@ FreeRangeData
 
 A script for uploading and updating FigShare articles. 
 
-#SetUp Instruction
+#SetUp Instructions
 1. Get a [Figshare] (http://figshare.com/)  account 
 2. Click on the Applications tab from the drop down menu in the upper right corner.
 3. Create a new application. 
