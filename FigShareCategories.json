@@ -1,0 +1,617 @@
+"items": [
+{
+"id": 1,
+"name": "Biophysics"
+},
+{
+"id": 4,
+"name": "Biochemistry"
+},
+{
+"id": 7,
+"name": "Medicine"
+},
+{
+"id": 8,
+"name": "Microbiology"
+},
+{
+"id": 10,
+"name": "Anatomy"
+},
+{
+"id": 11,
+"name": "Behavioral Neuroscience"
+},
+{
+"id": 12,
+"name": "Cell Biology"
+},
+{
+"id": 13,
+"name": "Genetics"
+},
+{
+"id": 14,
+"name": "Molecular Biology"
+},
+{
+"id": 15,
+"name": "Neuroscience"
+},
+{
+"id": 16,
+"name": "Physiology"
+},
+{
+"id": 17,
+"name": "Geography"
+},
+{
+"id": 19,
+"name": "Pharmacology"
+},
+{
+"id": 20,
+"name": "Computer Engineering"
+},
+{
+"id": 21,
+"name": "Biotechnology"
+},
+{
+"id": 23,
+"name": "Software Engineering"
+},
+{
+"id": 24,
+"name": "Evolutionary Biology"
+},
+{
+"id": 25,
+"name": "Anthropology"
+},
+{
+"id": 27,
+"name": "Economics"
+},
+{
+"id": 28,
+"name": "Paleontology"
+},
+{
+"id": 29,
+"name": "Geology"
+},
+{
+"id": 31,
+"name": "Environmental Chemistry"
+},
+{
+"id": 32,
+"name": "Geochemistry"
+},
+{
+"id": 34,
+"name": "Environmental Science"
+},
+{
+"id": 35,
+"name": "Limnology"
+},
+{
+"id": 36,
+"name": "Oceanography"
+},
+{
+"id": 37,
+"name": "Organic Chemistry"
+},
+{
+"id": 39,
+"name": "Ecology"
+},
+{
+"id": 42,
+"name": "Biological Engineering"
+},
+{
+"id": 44,
+"name": "Toxicology"
+},
+{
+"id": 45,
+"name": "Sociology"
+},
+{
+"id": 46,
+"name": "Immunology"
+},
+{
+"id": 47,
+"name": "Stereochemistry"
+},
+{
+"id": 54,
+"name": "Planetary Geology"
+},
+{
+"id": 55,
+"name": "Stellar Astronomy"
+},
+{
+"id": 56,
+"name": "Galactic Astronomy"
+},
+{
+"id": 57,
+"name": "Cosmology"
+},
+{
+"id": 58,
+"name": "Astrophysics"
+},
+{
+"id": 59,
+"name": "Planetary Science"
+},
+{
+"id": 61,
+"name": "Developmental Biology"
+},
+{
+"id": 62,
+"name": "Marine Biology"
+},
+{
+"id": 63,
+"name": "Parasitology"
+},
+{
+"id": 64,
+"name": "Cancer"
+},
+{
+"id": 65,
+"name": "Botany"
+},
+{
+"id": 66,
+"name": "Crystallography"
+},
+{
+"id": 69,
+"name": "Inorganic Chemistry"
+},
+{
+"id": 70,
+"name": "Molecular Physics"
+},
+{
+"id": 71,
+"name": "Nuclear Chemistry"
+},
+{
+"id": 73,
+"name": "Radiochemistry"
+},
+{
+"id": 75,
+"name": "Supramolecular Chemistry"
+},
+{
+"id": 76,
+"name": "Theoretical Computer Science"
+},
+{
+"id": 77,
+"name": "Applied Computer Science"
+},
+{
+"id": 78,
+"name": "Atmospheric Sciences"
+},
+{
+"id": 79,
+"name": "Geophysics"
+},
+{
+"id": 80,
+"name": "Hydrology"
+},
+{
+"id": 82,
+"name": "Mineralogy"
+},
+{
+"id": 84,
+"name": "Paleoclimatology"
+},
+{
+"id": 85,
+"name": "Palynology"
+},
+{
+"id": 86,
+"name": "Physical Geography"
+},
+{
+"id": 87,
+"name": "Soil Science"
+},
+{
+
+"id": 88,
+"name": "Agricultural Engineering"
+},
+{
+"id": 89,
+"name": "Aerospace Engineering"
+},
+{
+"id": 90,
+"name": "Genetic Engineering"
+},
+{
+"id": 91,
+"name": "Mechanical Engineering"
+},
+{
+"id": 92,
+"name": "Nuclear Engineering"
+},
+{
+"id": 94,
+"name": "Art"
+},
+{
+"id": 95,
+"name": "Design"
+},
+{
+"id": 97,
+"name": "Law"
+},
+{
+"id": 98,
+"name": "Literature"
+},
+{
+"id": 99,
+"name": "Performing Arts"
+},
+{
+"id": 100,
+"name": "Philosophy"
+},
+{
+"id": 102,
+"name": "Algebra"
+},
+{
+"id": 103,
+"name": "Geometry"
+},
+{
+"id": 104,
+"name": "Probability"
+},
+{
+"id": 105,
+"name": "Statistics"
+},
+{
+"id": 106,
+
+"name": "Science Policy"
+},
+{
+"id": 107,
+"name": "Applied Physics"
+},
+{
+"id": 108,
+"name": "Atomic Physics"
+},
+{
+"id": 109,
+"name": "Computational Physics"
+},
+{
+"id": 110,
+"name": "Condensed Matter Physics"
+},
+{
+"id": 111,
+"name": "Mechanics"
+},
+{
+"id": 112,
+"name": "Particle Physics"
+},
+{
+"id": 113,
+"name": "Plasma Physics"
+},
+{
+"id": 114,
+"name": "Quantum Mechanics"
+},
+{
+"id": 115,
+"name": "Solid Mechanics"
+},
+{
+"id": 116,
+"name": "Thermodynamics"
+},
+{
+"id": 117,
+"name": "Entropy"
+},
+{
+"id": 118,
+"name": "General Relativity"
+},
+{
+"id": 119,
+"name": "M-Theory"
+},
+{
+"id": 120,
+"name": "Special Relativity"
+},
+{
+"id": 122,
+"name": "Mental Health"
+
+},
+{
+"id": 125,
+"name": "Bioinformatics"
+},
+{
+"id": 126,
+"name": "History"
+},
+{
+"id": 127,
+"name": "Archaeology"
+},
+{
+"id": 128,
+"name": "Hematology"
+},
+{
+"id": 129,
+"name": "Education"
+},
+{
+"id": 130,
+"name": "Survey Results"
+},
+{
+"id": 131,
+"name": "Anesthesiology"
+},
+{
+"id": 132,
+"name": "Infectious Diseases"
+},
+{
+"id": 133,
+"name": "Plant Biology"
+},
+{
+"id": 134,
+"name": "Virology"
+},
+{
+"id": 135,
+"name": "Computational Biology"
+},
+{
+"id": 136,
+"name": "NMR Spectroscopy"
+},
+{
+"id": 137,
+"name": "Cheminformatics"
+},
+{
+"id": 138,
+"name": "Numerical Analysis"
+},
+{
+"id": 139,
+"name": "Pathology"
+},
+
+{
+"id": 140,
+"name": "Cardiology"
+},
+{
+"id": 141,
+"name": "Computational Chemistry"
+},
+{
+"id": 143,
+"name": "Solid Earth Sciences"
+},
+{
+"id": 144,
+"name": "Climate Science"
+},
+{
+"id": 145,
+"name": "Solar System, Solar Physics, Planets and Exoplanets"
+},
+{
+"id": 146,
+"name": "Space Science"
+},
+{
+"id": 147,
+"name": "Stars, Variable Stars"
+},
+{
+"id": 148,
+"name": "Instrumentation, Techniques, and Astronomical Observations"
+},
+{
+"id": 149,
+"name": "Interstellar and Intergalactic Matter"
+},
+{
+"id": 150,
+"name": "Extragalactic Astronomy"
+},
+{
+"id": 151,
+"name": "Biomarkers"
+},
+{
+"id": 152,
+"name": "Pathogenesis"
+},
+{
+"id": 153,
+"name": "Health Care"
+},
+{
+"id": 154,
+"name": "Diseases"
+},
+{
+"id": 155,
+"name": "Stem Cells"
+},
+{
+
+"id": 156,
+"name": "Systems Biology"
+},
+{
+"id": 157,
+"name": "Structural Biology"
+},
+{
+"id": 158,
+"name": "Biological Techniques"
+},
+{
+"id": 159,
+"name": "Zoology"
+},
+{
+"id": 160,
+"name": "Digital Humanities"
+},
+{
+"id": 161,
+"name": "Disability Studies"
+},
+{
+"id": 162,
+"name": "Drama"
+},
+{
+"id": 163,
+"name": "Entertainment"
+},
+{
+"id": 164,
+"name": "Environmental Humanities"
+},
+{
+"id": 165,
+"name": "Ethnic Studies"
+},
+{
+"id": 166,
+"name": "Gender studies"
+},
+{
+"id": 167,
+"name": "Language"
+},
+{
+"id": 168,
+"name": "Linguistics"
+},
+{
+"id": 169,
+"name": "Media Studies"
+},
+{
+"id": 170,
+"name": "Museology"
+},
+{
+"id": 171,
+http://jsonprettyprint.com/json-pretty-printer.php
+9/1012/18/2014
+}
+]
+jsonprettyprint.com/json-pretty-printer.php
+"name": "Religious Studies"
+},
+{
+"id": 172,
+"name": "Rhetoric"
+},
+{
+"id": 173,
+"name": "Applied Psychology"
+},
+{
+"id": 174,
+"name": "Clinical Psychology"
+},
+{
+"id": 175,
+"name": "Developmental and Educational Psychology"
+},
+{
+"id": 176,
+"name": "Neuroscience and Physiological Psychology"
+},
+{
+"id": 177,
+"name": "Organizational Behavioral Psychology"
+},
+{
+"id": 178,
+"name": "Personality, Social and Criminal Psychology"
+},
+{
+"id": 179,
+"name": "Artificial Intelligence and Image Processing"
+},
+{
+"id": 180,
+"name": "Computation Theory and Mathematics"
+},
+{
+"id": 181,
+"name": "Computer Software"
+},
+{
+"id": 182,
+"name": "Data Format"
+},
+{
+"id": 183,
+"name": "Distributed Computing"
+},
+{
+"id": 184,
+"name": "Information Systems"
+},
+{
+"id": 185,
+"name": "Library and Information Studies"
+}
+http://jsonprettyprint.com/json-pretty-printer.php
+10/10
