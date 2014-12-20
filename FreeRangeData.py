@@ -78,6 +78,7 @@ def should_upload(path):
 			should = 0
 	return should
 
+##TODO: UPDATE/FORMAT USAGE MESSAGE (100)
 
 def usage():
 	print "usage:"
@@ -267,8 +268,7 @@ def publish():
 ##################################MAIN#########################################
 
 
-#variables that are going to be used as global
-
+#variables
 #describe the package
 package = ''
 taglist = []
@@ -288,9 +288,8 @@ uploadmask = ['Figshare.json']
 publish = 0
 force = 0
 overwrite = 0
+upload = 0
 
-#just setting up a signal handler - ensures that on an interupt we update our JSON to the webs most recent copy
-signal.signal(signal.SIGINT, signal_handler)
 
 try:
 	options, remainder = getopt.gnu_getopt(sys.argv[1:],'o', ['package=','tags=','description=','noupload=', 'publish' , 'force' , 'categories=','overwrite'])
@@ -327,42 +326,58 @@ for opt,arg in options:
 		force = 1
 	if opt=='--overwrite':
 		overwrite =1
+	if opt=='--upload':
+		upload =1
+
+#SigInt Catches
+signal.signal(signal.SIGINT, signal_handler)
 
 	#test sensible setttings
 if (not os.path.isdir(package)):
 	print "Currently a package must be a directory that contains files"
 	sys.exit(2)
 
-	#get a current list of articles I've uploaded , used for checking file names and article titles
 
+#get fresh list of my articles from Figshare
+getMyArticles()
 
+#TODO: (5) Test if articles with package name exsist 
 
 #is this a new figshare article or is there evidence that this has been uploaded before
 if os.path.isfile(package+'/Figshare.json'):
 	print "Package has a json inside of it, assuming that we're simply updating"
 	#get information from the actual JSON we have on file
 	load_json()
-else :
+else:
 	#create a new article
 	print "Package appears to be a new upload"
 	create_article(package,description,'fileset')
 	load_json()
 	
+#refresh article info
+
 getMyArticles()
 
 
+if upload:
 #move into the package and upload everything that is in there.
-if (os.path.isdir(package)):
-	os.chdir(package)
-	files = next(os.walk('.'))[2]
-	for f in files:
-		if should_upload(f):
-			add_file(f)
-	os.chdir('..')
-else:
-	print("This doesn't appear to be a directory!")
-	sys.exit(133)
+	if (os.path.isdir(package)):
+		os.chdir(package)
+		files = next(os.walk('.'))[2]
+		for f in files:
+			if should_upload(f):
+				add_file(f)
+		os.chdir('..')
+	else:
+		print("This doesn't appear to be a directory!")
+		sys.exit(133)
 	
+##TODO: (1) verify if these require , copy current , update, update on figshare @testing
+##TODO: Update Categories (1) [testing]
+##TODO: Update Description (1) [testing]
+##TODO: Update Tags (1) [testing]
+##TODO: Publish Article (1) [testing]
+
 
 #need publish tag and description flow control. (need to add in tests and overwrites as well)
 #get current JSON record from figshare and save to disk
