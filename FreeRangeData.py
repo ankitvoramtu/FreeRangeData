@@ -25,7 +25,9 @@ def signal_handler(signal,frame):
 
 def fetch_credentials():
 	cred = {}
-	with open('oauth_credentials.txt') as f:
+	path = os.path.dirname(os.path.realpath(sys.argv[0]))
+	path = path +'/oauth_credentials.txt'
+	with open(path) as f:
 		cred = json.load(f)
 	return cred
 
@@ -326,7 +328,7 @@ for opt,arg in options:
 		force = 1
 	if opt=='--overwrite':
 		overwrite =1
-	if opt=='--upload':
+	if opt=='--upload': #not sure I want this to be explicit 
 		upload =1
 
 #SigInt Catches
@@ -359,6 +361,7 @@ else:
 getMyArticles()
 
 
+upload = 1
 if upload:
 #move into the package and upload everything that is in there.
 	if (os.path.isdir(package)):
