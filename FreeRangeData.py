@@ -253,7 +253,6 @@ def add_Author(authID):
 		update_json(json_response)
 	else:
 		response.raise_for_status()
-
 	return
 
 
@@ -262,15 +261,15 @@ def publish():
 	client = requests.session()
 	url = 'http://api.figshare.com/v1/my_data/articles/{}/action/make_public'.format(package_json['article_id'])
 	fetch_article_info()
-
-	response = client.post(url,auth=oath)
-		#check our return codes
-	if(response.status_code == requests.codes.ok):
-		print package_json['article_id'] , " is now free range!"
-		json_response = json.loads(response.content)
-		update_json(json_response)
-	else:
-		response.raise_for_status()
+	if len(package_json['tags']) > 0 and len (package_json['description']) > 0 and len(package_json['categories']) > 0:
+		response = client.post(url,auth=oath)
+			#check our return codes
+		if(response.status_code == requests.codes.ok):
+			print package_json['article_id'] , " is now free range!"
+			json_response = json.loads(response.content)
+			update_json(json_response)
+		else:
+			response.raise_for_status()
 
 	return
 
