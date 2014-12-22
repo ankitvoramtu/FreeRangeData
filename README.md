@@ -19,12 +19,17 @@ A script for uploading and updating FigShare articles. I assume that a folder is
 
 ##OtherOptions:
   --tags <text> or <file> tag you wish added to the article. Use Multiple times for multiple tags.
+  
   --description <file> or <text> Article Description.
+  
   --noupload <pattern> Mask specific files from being uploaded. (Currently using to create less than full articles prior to making public and finalizing uploads of data sets.)
+  
   --categories <int> Add a category tag to the article. FigShareCategoryCodes.txt contains a list of these. 
   
   --overwrite Will overwrite already uploaded files to the article.(Default behavior is to assume that an uploaded file hasn't changed from last update)
+  
   --publish Publishes the article. 
+  
   --force Will create a new article with the same name, even if you already have one with that name uploaded.
 
 
