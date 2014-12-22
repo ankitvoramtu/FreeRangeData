@@ -194,39 +194,44 @@ def add_file(file_path):
 	return
 
 
-def addCategory(categoryInt):
+def addCategory():
 	client = requests.session()
-	body = {'category_id':categoryInt}
-	headers = {'content-type':'application/json'}
-	url = 'http://api.figshare.com/v1/my_data/articles/{}/categories'.format(package_json['article_id'])
-	response = client.put(url,auth=oath,data=json.dumps(body),headers=headers)
+	for categoryInt in catagories:
+		body = {'category_id':categoryInt}
+		headers = {'content-type':'application/json'}
+		url = 'http://api.figshare.com/v1/my_data/articles/{}/categories'.format(package_json['article_id'])
+		response = client.put(url,auth=oath,data=json.dumps(body),headers=headers)
 
-	#check our return codes
-	if(response.status_code == requests.codes.ok):
-		print categoryInt , " has been added to article " , package_json['article_id']
-		json_response = json.loads(response.content)
-		update_json(json_response)
-	else:
-		response.raise_for_status()
-
-
-	
+		#check our return codes
+		if(response.status_code == requests.codes.ok):
+			print categoryInt , " has been added to article " , package_json['article_id']
+			json_response = json.loads(response.content)
+			update_json(json_response)
+		else:
+			response.raise_for_status()
 	return
 
-def addTag(tag):
+def addTag():
 	client = requests.session()
-	body = {'tag_name':tag}
-	headers = {'content-type':'application/json'}
-	url = 'http://api.figshare.com/v1/my_data/articles/{}/tags'.format(package_json['article_id'])
-	response = client.put(url, auth=oauth,data=json.dumps(body), headers=headers)
-	#check our return codes
-	if(response.status_code == requests.codes.ok):
-		json_response = json.loads(response.content)
-		update_json(json_response)
-		print package_json['article_id'] , "now has the tag " , tag," associated with it"
-	else:
-		response.raise_for_status()
+	
+	current_tags=[]
+	for tag in package_json['tags']:
+		current_tags.append(tag['name'])
+	for tag in taglist:
+		body = {'tag_name':tag}
+		headers = {'content-type':'application/json'}
 
+		if tag not in current_tags:
+			url = 'http://api.figshare.com/v1/my_data/articles/{}/tags'.format(package_json['article_id'])
+			response = client.put(url, auth=oauth,data=json.dumps(body), headers=headers)
+			#check our return codes
+			if(response.status_code == requests.codes.ok):
+				json_response = json.loads(response.content)
+				update_json(json_response)
+				print package_json['article_id'] , "now has the tag " , tag," associated with it"
+				current_tags.append(tag)
+			else:
+				response.raise_for_status()
 	return
 
 
@@ -252,8 +257,9 @@ def add_Author(authID):
 def publish():
 	client = requests.session()
 	url = 'http://api.figshare.com/v1/my_data/articles/{}/action/make_public'.format(package_json['article_id'])
-	response = client.post(url,auth=oath)
+	fetch_article_info()
 
+	response = client.post(url,auth=oath)
 		#check our return codes
 	if(response.status_code == requests.codes.ok):
 		print package_json['article_id'] , " is now free range!"
@@ -280,8 +286,7 @@ articleID_and_files ={}
 title_and_articleIDs ={}
 package_json = {}
 oauth = authenticate()
-
-categories = [ ]
+categories = []
 
 #describe the process	
 tagfile = ''
@@ -349,6 +354,7 @@ getMyArticles()
 if os.path.isfile(package+'/Figshare.json'):
 	print "Package has a json inside of it, assuming that we're simply updating"
 	#get information from the actual JSON we have on file
+	##TODO (10)test if the JSON shows up in getMyArticle 
 	load_json()
 else:
 	#create a new article
@@ -360,6 +366,7 @@ else:
 
 getMyArticles()
 
+pp.pprint (package_json)
 
 upload = 1
 if upload:
@@ -375,6 +382,16 @@ if upload:
 		print("This doesn't appear to be a directory!")
 		sys.exit(133)
 	
+
+
+if len(taglist) > 0 :
+	addTag()
+
+if len(categories) > 1:
+	addCategory()
+
+
+
 ##TODO: (1) verify if these require , copy current , update, update on figshare @testing
 ##TODO: Update Categories (1) [testing]
 ##TODO: Update Description (1) [testing]
