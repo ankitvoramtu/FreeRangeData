@@ -396,11 +396,10 @@ if len(categories) > 0:
 
 
 
-##TODO: (1) verify if these require , copy current , update, update on figshare @testing
-##TODO: Update Categories (1) [testing]
+
+
 ##TODO: Update Description (1) [testing]
-##TODO: Update Tags (1) [testing]
-##TODO: Publish Article (1) [testing]
+##TODO: [Test] publish article (1) 
 
 
 #need publish tag and description flow control. (need to add in tests and overwrites as well)
