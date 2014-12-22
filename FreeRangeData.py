@@ -51,16 +51,18 @@ def getMyArticles():
 	global articleID_and_files
 	global title_and_articleIDs
 	
-	for article in myArticles:
+	
+
+	for article in myArticles:	
 		articleID_and_files[article["article_id"]] = []
 		if article["title"] in title_and_articleIDs:
 			(title_and_articleIDs[article["title"]]).append(article["article_id"])
 		else:
 			title_and_articleIDs[article["title"]] = []
 			(title_and_articleIDs[article["title"]]).append(article["article_id"])
+		
 		for f in article["files"]:
 			(articleID_and_files[article["article_id"]]).append(f['name'])
-
 
 	return
 
@@ -369,7 +371,6 @@ else:
 
 getMyArticles()
 
-pp.pprint (package_json)
 
 upload = 1
 if upload:
