@@ -3,6 +3,8 @@ FreeRangeData
 
 A script for uploading and updating FigShare articles. I assume that a folder is a discrete fileset for an experiment or sample, we check to see evidence of the folder being submitted previously by : 1) looking for a json document from previous sessions and/or 2) Packages of the same name being uploaded by the user previously. 
 
+There is a more [here](http://www.dylanstorey.com/node/21) on why why it's named what it is, and why it got built. 
+
 
 
 #SetUp Instructions
