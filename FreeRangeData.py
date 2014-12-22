@@ -196,24 +196,28 @@ def add_file(file_path):
 
 def addCategory():
 	client = requests.session()
-	for categoryInt in catagories:
+	current_categories = []
+	for c in package_json['categories']:
+		current_categories.append(c['id'])
+	for categoryInt in categories:
 		body = {'category_id':categoryInt}
 		headers = {'content-type':'application/json'}
 		url = 'http://api.figshare.com/v1/my_data/articles/{}/categories'.format(package_json['article_id'])
-		response = client.put(url,auth=oath,data=json.dumps(body),headers=headers)
-
-		#check our return codes
-		if(response.status_code == requests.codes.ok):
-			print categoryInt , " has been added to article " , package_json['article_id']
-			json_response = json.loads(response.content)
-			update_json(json_response)
-		else:
-			response.raise_for_status()
+		
+		if categoryInt not in current_categories :
+			response = client.put(url,auth=oauth,data=json.dumps(body),headers=headers)
+			#check our return codes
+			if(response.status_code == requests.codes.ok):
+				print categoryInt , " has been added to article " , package_json['article_id']
+				json_response = json.loads(response.content)
+				update_json(json_response)
+				current_categories.append(categoryInt)
+			else:
+				response.raise_for_status()
 	return
 
 def addTag():
 	client = requests.session()
-	
 	current_tags=[]
 	for tag in package_json['tags']:
 		current_tags.append(tag['name'])
@@ -387,7 +391,7 @@ if upload:
 if len(taglist) > 0 :
 	addTag()
 
-if len(categories) > 1:
+if len(categories) > 0:
 	addCategory()
 
 
