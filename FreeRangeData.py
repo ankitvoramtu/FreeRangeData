@@ -353,7 +353,7 @@ if (not os.path.isdir(package)):
 #get fresh list of my articles from Figshare
 getMyArticles()
 
-#TODO: (5) Test if articles with package name exsist 
+
 
 #is this a new figshare article or is there evidence that this has been uploaded before
 if os.path.isfile(package+'/Figshare.json'):
@@ -363,6 +363,7 @@ if os.path.isfile(package+'/Figshare.json'):
 	load_json()
 else:
 	#create a new article
+	#TODO: (5) Test if articles with package name exsist 
 	print "Package appears to be a new upload"
 	create_article(package,description,'fileset')
 	load_json()
